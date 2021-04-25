@@ -1,12 +1,14 @@
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LoginVC: UIViewController {
     //MARK:- Initialization
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
-    
+    let disposeBag = DisposeBag()
     lazy var viewModel : LoginViewModel = {
         return LoginViewModel()
     }()
@@ -15,12 +17,13 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         initViewModel()
-        
+        btnLogin.isEnabled = true
     }
     
     
     //MARK:- Button Actions
     @IBAction func login(_ sender: UIButton) {
+        
         print("Login Success")
     }
     
@@ -37,17 +40,11 @@ class LoginVC: UIViewController {
     }
     
     func initViewModel(){
-        viewModel.validationSuccessClosure = { (isValid) in
-            self.btnLoginEnable(isEnable:isValid)
-        }
+        txtEmail.rx.text.map{$0 ?? ""}.bind(to: viewModel.email).disposed(by: disposeBag)
+        txtPassword.rx.text.map{$0 ?? ""}.bind(to: viewModel.password).disposed(by: disposeBag)
         
-        viewModel.emailClosure = { (isValid) in
-            self.txtEmail.layer.borderColor = isValid ? UIColor.darkGray.cgColor : UIColor.red.cgColor
-        }
-        
-        viewModel.passwordClosure = { (isValid) in
-            self.txtPassword.layer.borderColor = isValid ? UIColor.darkGray.cgColor : UIColor.red.cgColor
-        }
+        viewModel.isValid().bind(to: btnLogin.rx.isEnabled).disposed(by: disposeBag)
+        viewModel.isValid().map{$0 ? 1 : 0.5}.bind(to: btnLogin.rx.alpha).disposed(by: disposeBag)
     }
     
     func btnLoginEnable(isEnable:Bool){
@@ -71,7 +68,7 @@ extension LoginVC: UITextFieldDelegate{
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        viewModel.validation()
+        //viewModel.validation()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -84,12 +81,8 @@ extension LoginVC: UITextFieldDelegate{
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
         
         if textField == txtPassword {
-            viewModel.updatePasswordCredentials(password: updatedText)
-            viewModel.validation()
             return updatedText.count <= 15
         } else{
-            viewModel.updateEmailCredentials(email: updatedText)
-            viewModel.validation()
             return true
         }
     }

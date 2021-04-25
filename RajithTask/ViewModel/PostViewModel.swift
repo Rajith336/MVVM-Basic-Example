@@ -2,95 +2,109 @@
 
 import UIKit
 import RxSwift
-import Moya
+import RxCocoa
+
+
+
 
 class PostViewModel {
-    let provider = MoyaProvider<Service>()
-    let disposeBag = DisposeBag()
-    public var postSuccessClosure: (() -> ())?
-    public var postFaliureClosure:(() -> ())?
     
     
-    private var postList:[PostData] = []{
-        didSet{
-            self.postSuccessClosure?()
+    private var postList = BehaviorRelay<[PostData]>(value: [])
+    public var errorMessage = BehaviorRelay<String>(value: "")
+    
+    
+    ///Rx Swift
+    func isSuccess() -> Observable<Bool>{
+        return postList.asObservable().map {  list in
+            return list.count > 0
+            
         }
     }
     
-    public var errorMessage: String?{
-        didSet{
-            self.postFaliureClosure?()
+    func isFaliure() -> Observable<String>{
+        return errorMessage.asObservable().map {  error in
+            return error
+            
         }
     }
-    
     //MARK:- TableViewDataSource
     func numberOfRowsInSection(at section: Int) -> Int{
-        return postList.count
+        return  postList.value.count
     }
     
     func cellForRowAtIndexPath(at indexPath: IndexPath) -> PostData{
-        return postList[indexPath.row]
+        return  postList.value[indexPath.row]
     }
-
+    
+    
     func fetchPostAPi(){
         if Reachability.isConnectedToNetwork() {
-            provider.request(.postList) {
-                result in
+            ActivityIndicatorView(title: "Loading").startAnimating()
+            var request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
+            
+            let session = URLSession.shared
+            let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+                //print(response)
+                DispatchQueue.main.async {
+                    ActivityIndicatorView(title: "Loading").stopAnimating()
+                }
                 
-                do {
-                    let response = try result.get()
-                    self.processingJson(response)
-                } catch {
-                    self.errorMessage = "\(error as CustomStringConvertible)"
+                if error == nil {
+                    self.processingJson(response: data ?? Data())
+                } else {
+                    self.errorMessage.accept("\(String(describing: error))")
                     if let modData = UserDefaults.standard.object(forKey: "postList") as? Data {
                         let decoder = JSONDecoder()
                         if let model = try? decoder.decode(Post.self, from: modData) {
-                            print(model)
-                            self.postList = model
+                            //print(model)
+                            self.postList.accept(model)
                             
                         }}
-                    }
-                
                 }
+                
+            })
+            
+            task.resume()
         } else{
-            self.errorMessage = "\("There is no network")"
+            self.errorMessage.accept("\("There is no network")")
             if let modData = UserDefaults.standard.object(forKey: "postList") as? Data {
                 let decoder = JSONDecoder()
                 if let model = try? decoder.decode(Post.self, from: modData) {
-                    print(model)
-                    self.postList = model
+                    //print(model)
+                    self.postList.accept(model)
                     
                 }}
         }
-        
     }
     
+    
     func selectFavourite(at indexPath: IndexPath){
-        postList[indexPath.row].isFavourite = true
+        postList.value[indexPath.row].isFavourite = true
         let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(postList) {
+        if let encoded = try? encoder.encode(postList.value) {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "postList")
             
             if let modData = UserDefaults.standard.object(forKey: "postList") as? Data {
                 let decoder = JSONDecoder()
                 if let model = try? decoder.decode(Post.self, from: modData) {
-                    print(model)
+                    //print(model)
                     
                 }}
         }
         
     }
     
-    fileprivate func processingJson(_ response: (PrimitiveSequence<SingleTrait, Response>.Element)) {
+    fileprivate func processingJson(response:Data) {
         let jsonDecoder = JSONDecoder()
-        if let responseModel = try? jsonDecoder.decode(Post.self, from: response.data) {
+        if let responseModel = try? jsonDecoder.decode(Post.self, from: response) {
             
             if let modData = UserDefaults.standard.object(forKey: "postList") as? Data {
                 let decoder = JSONDecoder()
                 if var model = try? decoder.decode(Post.self, from: modData) {
                     model = model.filter({$0.isFavourite ?? false})
-                    print(model)
+                    //print(model)
                     
                     for mod in model {
                         if let indexMod = responseModel.firstIndex(where: {$0.id == mod.id && $0.userID == mod.userID}) {
@@ -99,14 +113,14 @@ class PostViewModel {
                     }
                 }}
             
-            self.postList = responseModel
+            self.postList.accept(responseModel)
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(responseModel) {
                 let defaults = UserDefaults.standard
                 defaults.set(encoded, forKey: "postList")
             }
         } else{
-            self.errorMessage = "\("Issue in Api")"
+            self.errorMessage.accept("\("Issue in Api")")
         }
     }
     

@@ -3,13 +3,16 @@
 import UIKit
 
 class ActivityIndicatorView {
+    let vc = (UIApplication.shared.connectedScenes
+                .first!.delegate as! SceneDelegate).window?.rootViewController ?? UIViewController()
     var view: UIView!
     
     var activityIndicator: UIActivityIndicatorView!
     
     var title: String!
     
-    init(title: String, center: CGPoint, width: CGFloat = 200.0, height: CGFloat = 50.0) {
+    init(title: String, width: CGFloat = 200.0, height: CGFloat = 50.0) {
+        let center = vc.view.center
         self.title = title
         
         let x = center.x - width/2.0
@@ -29,6 +32,8 @@ class ActivityIndicatorView {
         
         self.view.addSubview(self.activityIndicator)
         self.view.addSubview(titleLabel)
+        self.view.tag = 12
+        vc.view.addSubview(view)
     }
     
     func getViewActivityIndicator() -> UIView {
@@ -37,12 +42,17 @@ class ActivityIndicatorView {
     
     func startAnimating() {
         self.activityIndicator.startAnimating()
-        self.view.isUserInteractionEnabled = false
+        self.vc.view.isUserInteractionEnabled = false
     }
     
     func stopAnimating() {
         self.activityIndicator.stopAnimating()
-        self.view.isUserInteractionEnabled = true
+        self.vc.view.isUserInteractionEnabled = true
         self.view.removeFromSuperview()
+        for vw in self.vc.view.subviews{
+            if vw.tag == 12 {
+                vw.removeFromSuperview()
+            }
+        }
     }
 }

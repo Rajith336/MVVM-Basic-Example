@@ -1,43 +1,13 @@
 
 
 import UIKit
-
+import RxSwift
+import RxCocoa
 
 class LoginViewModel {
+    var email = BehaviorRelay<String>(value: "")
+    var password = BehaviorRelay<String>(value: "")
     
-    public var validationSuccessClosure: ((Bool) -> ())?
-    public var emailClosure:((Bool) -> ())?
-    public var passwordClosure:((Bool) -> ())?
-    
-    private var email = ""
-    private var password = ""
-    
-    private var credentials = LoginCredentials(){
-        didSet{
-            email = credentials.email
-            password = credentials.password
-        }
-    }
-    
-    func updateEmailCredentials(email: String) {
-        credentials.email = email
-        self.emailClosure?(self.isValidEmail(email: credentials.email))
-        validation()
-    }
-    
-    func updatePasswordCredentials(password: String) {
-        credentials.password = password
-        self.passwordClosure?(self.password.count >= 8)
-        validation()
-    }
-    
-    func validation(){
-        if (isValidEmail(email:email)) && ((self.password).count < 16) && ((self.password).count >= 8) {
-            self.validationSuccessClosure?(true)
-        } else{
-            self.validationSuccessClosure?(false)
-        }
-    }
     
     func isValidEmail(email:String) -> Bool {
         // here, `try!` will always succeed because the pattern is valid
@@ -46,5 +16,10 @@ class LoginViewModel {
         return emailPredicate.evaluate(with: email)
     }
     
+    func isValid() -> Observable<Bool>{
+        return Observable.combineLatest(email.asObservable(), password.asObservable()) { mail , pass in
+            (self.isValidEmail(email:mail)) && ((pass).count < 16) && ((pass).count >= 8)
+        }
+    }
 }
 

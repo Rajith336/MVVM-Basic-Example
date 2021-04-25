@@ -13,7 +13,6 @@
 		CF590B5926355F6D00BBDE0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF590B5826355F6D00BBDE0A /* Assets.xcassets */; };
 		CF590B6726355F6E00BBDE0A /* RajithTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590B6626355F6E00BBDE0A /* RajithTaskTests.swift */; };
 		CF590B7226355F6E00BBDE0A /* RajithTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590B7126355F6E00BBDE0A /* RajithTaskUITests.swift */; };
-		CF590BC92635606B00BBDE0A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BC72635606B00BBDE0A /* LoginModel.swift */; };
 		CF590BCA2635606B00BBDE0A /* PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BC82635606B00BBDE0A /* PostDataModel.swift */; };
 		CF590BD12635607E00BBDE0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF590BCE2635607E00BBDE0A /* LaunchScreen.storyboard */; };
 		CF590BD22635607E00BBDE0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF590BCF2635607E00BBDE0A /* Main.storyboard */; };
@@ -26,9 +25,10 @@
 		CF590BED263560A300BBDE0A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BEC263560A300BBDE0A /* PostCell.swift */; };
 		CF590BF2263560AB00BBDE0A /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BF1263560AB00BBDE0A /* Internet.swift */; };
 		CF590BF8263560BA00BBDE0A /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BF6263560BA00BBDE0A /* ActivityIndicatorView.swift */; };
-		CF590BF9263560BA00BBDE0A /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BF7263560BA00BBDE0A /* ServiceManager.swift */; };
-		CF590BFF2635615100BBDE0A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = CF590BFE2635615100BBDE0A /* Moya */; };
-		CF590C012635615100BBDE0A /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CF590C002635615100BBDE0A /* RxMoya */; };
+		CFF9E1292635E8DA0073F904 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CFF9E1282635E8DA0073F904 /* RxSwift */; };
+		CFF9E12B2635E8DA0073F904 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CFF9E12A2635E8DA0073F904 /* RxRelay */; };
+		CFF9E12D2635E8DA0073F904 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CFF9E12C2635E8DA0073F904 /* RxCocoa */; };
+		CFF9E12F2635E8DA0073F904 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = CFF9E12E2635E8DA0073F904 /* RxBlocking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,6 @@
 		CF590B6D26355F6E00BBDE0A /* RajithTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RajithTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF590B7126355F6E00BBDE0A /* RajithTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RajithTaskUITests.swift; sourceTree = "<group>"; };
 		CF590B7326355F6E00BBDE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF590BC72635606B00BBDE0A /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		CF590BC82635606B00BBDE0A /* PostDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDataModel.swift; sourceTree = "<group>"; };
 		CF590BCE2635607E00BBDE0A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF590BCF2635607E00BBDE0A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +73,6 @@
 		CF590BEC263560A300BBDE0A /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		CF590BF1263560AB00BBDE0A /* Internet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
 		CF590BF6263560BA00BBDE0A /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
-		CF590BF7263560BA00BBDE0A /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +80,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF590C012635615100BBDE0A /* RxMoya in Frameworks */,
-				CF590BFF2635615100BBDE0A /* Moya in Frameworks */,
+				CFF9E12D2635E8DA0073F904 /* RxCocoa in Frameworks */,
+				CFF9E12F2635E8DA0073F904 /* RxBlocking in Frameworks */,
+				CFF9E12B2635E8DA0073F904 /* RxRelay in Frameworks */,
+				CFF9E1292635E8DA0073F904 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +111,7 @@
 				CF590B6526355F6E00BBDE0A /* RajithTaskTests */,
 				CF590B7026355F6E00BBDE0A /* RajithTaskUITests */,
 				CF590B4A26355F6C00BBDE0A /* Products */,
+				CFF9DF4A2635DABD0073F904 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				CF590BF6263560BA00BBDE0A /* ActivityIndicatorView.swift */,
-				CF590BF7263560BA00BBDE0A /* ServiceManager.swift */,
 			);
 			path = ServiceManager;
 			sourceTree = "<group>";
@@ -218,10 +218,16 @@
 		CF590B8926355F9100BBDE0A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CF590BC72635606B00BBDE0A /* LoginModel.swift */,
 				CF590BC82635606B00BBDE0A /* PostDataModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CFF9DF4A2635DABD0073F904 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,8 +247,10 @@
 			);
 			name = RajithTask;
 			packageProductDependencies = (
-				CF590BFE2635615100BBDE0A /* Moya */,
-				CF590C002635615100BBDE0A /* RxMoya */,
+				CFF9E1282635E8DA0073F904 /* RxSwift */,
+				CFF9E12A2635E8DA0073F904 /* RxRelay */,
+				CFF9E12C2635E8DA0073F904 /* RxCocoa */,
+				CFF9E12E2635E8DA0073F904 /* RxBlocking */,
 			);
 			productName = RajithTask;
 			productReference = CF590B4926355F6C00BBDE0A /* RajithTask.app */;
@@ -316,7 +324,7 @@
 			);
 			mainGroup = CF590B4026355F6C00BBDE0A;
 			packageReferences = (
-				CF590BFD2635615100BBDE0A /* XCRemoteSwiftPackageReference "Moya" */,
+				CFF9E1272635E8DA0073F904 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = CF590B4A26355F6C00BBDE0A /* Products */;
 			projectDirPath = "";
@@ -365,7 +373,6 @@
 				CF590BDF2635609300BBDE0A /* PostViewModel.swift in Sources */,
 				CF590B5726355F6C00BBDE0A /* RajithTask.xcdatamodeld in Sources */,
 				CF590BDE2635609300BBDE0A /* FavouriteViewModel.swift in Sources */,
-				CF590BC92635606B00BBDE0A /* LoginModel.swift in Sources */,
 				CF590BE72635609B00BBDE0A /* PostVC.swift in Sources */,
 				CF590BDD2635609300BBDE0A /* LoginViewModel.swift in Sources */,
 				CF590B4D26355F6C00BBDE0A /* AppDelegate.swift in Sources */,
@@ -375,7 +382,6 @@
 				CF590BF2263560AB00BBDE0A /* Internet.swift in Sources */,
 				CF590BED263560A300BBDE0A /* PostCell.swift in Sources */,
 				CF590BF8263560BA00BBDE0A /* ActivityIndicatorView.swift in Sources */,
-				CF590BF9263560BA00BBDE0A /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,12 +469,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -518,11 +527,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -558,6 +570,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.task.RajithTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -685,26 +698,36 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CF590BFD2635615100BBDE0A /* XCRemoteSwiftPackageReference "Moya" */ = {
+		CFF9E1272635E8DA0073F904 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 14.0.1;
+				minimumVersion = 6.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CF590BFE2635615100BBDE0A /* Moya */ = {
+		CFF9E1282635E8DA0073F904 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CF590BFD2635615100BBDE0A /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
+			package = CFF9E1272635E8DA0073F904 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
-		CF590C002635615100BBDE0A /* RxMoya */ = {
+		CFF9E12A2635E8DA0073F904 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CF590BFD2635615100BBDE0A /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
+			package = CFF9E1272635E8DA0073F904 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		CFF9E12C2635E8DA0073F904 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFF9E1272635E8DA0073F904 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CFF9E12E2635E8DA0073F904 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFF9E1272635E8DA0073F904 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
 		};
 /* End XCSwiftPackageProductDependency section */
 

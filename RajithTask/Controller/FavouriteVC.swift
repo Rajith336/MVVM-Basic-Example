@@ -1,10 +1,12 @@
 
 
 import UIKit
+import RxSwift
 
 class FavouriteVC: UIViewController {
     // MARK: - Initialization
     @IBOutlet weak var tblFav: UITableView!
+    let disposeBag = DisposeBag()
     lazy var viewModel : FavouriteViewModel = {
         return FavouriteViewModel()
     }()
@@ -29,11 +31,14 @@ class FavouriteVC: UIViewController {
     }
     
     func initViewModel(){
-        viewModel.listFetchClosure = { [weak self]() in
-            DispatchQueue.main.async {
-                self?.tblFav.reloadData()
+        viewModel.isSuccess().subscribe { [weak self](isSuccess) in
+            if isSuccess.element ?? false{
+                DispatchQueue.main.async {
+                    self?.tblFav.reloadData()
+                }
             }
-        }
+            
+        }.disposed(by: disposeBag)
         
     }
     

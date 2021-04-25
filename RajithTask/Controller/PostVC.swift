@@ -1,14 +1,16 @@
 
 
 import UIKit
+import RxSwift
 
 class PostVC: UIViewController {
     // MARK: - Initialization
     @IBOutlet weak var tblPost: UITableView!
+    let disposeBag = DisposeBag()
     lazy var viewModel : PostViewModel = {
         return PostViewModel()
     }()
-    var activityIndicatorView: ActivityIndicatorView!
+    
     
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
@@ -18,7 +20,6 @@ class PostVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.activityIndicatorView.startAnimating()
         viewModel.fetchPostAPi()
     }
     
@@ -28,26 +29,27 @@ class PostVC: UIViewController {
         tblPost.tableFooterView = UIView()
         tblPost.layoutMargins = UIEdgeInsets.zero
         tblPost.separatorInset = UIEdgeInsets.zero
-        activityIndicatorView = ActivityIndicatorView(title: "Loading...", center:self.view.center)
-        view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
     }
     
     func initViewModel(){
-        viewModel.postSuccessClosure = { [weak self]() in
-            DispatchQueue.main.async {
-                self?.activityIndicatorView.stopAnimating()
-                self?.tblPost.reloadData()
-            }
-        }
-        
-        viewModel.postFaliureClosure = { [weak self]() in
-            DispatchQueue.main.async {
-                self?.activityIndicatorView.stopAnimating()
-                if let alertMessage = self?.viewModel.errorMessage{
-                    self?.showAlertAction(message: alertMessage)
+        viewModel.isSuccess().subscribe { [weak self](isSuccess) in
+            if isSuccess.element ?? false{
+                DispatchQueue.main.async {
+                    self?.tblPost.reloadData()
                 }
             }
-        }
+            
+        }.disposed(by: disposeBag)
+        
+        viewModel.isFaliure().subscribe { [weak self](error) in
+            if (error.element ?? "") != "" {
+                DispatchQueue.main.async {
+                    self?.showAlertAction(message: error.element ?? "")
+                }
+            }
+            
+        }.disposed(by: disposeBag)
+        
     }
     
     //MARK:- ShowAlertAction
