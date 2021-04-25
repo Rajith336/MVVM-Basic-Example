@@ -3,19 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		CF590B4D26355F6C00BBDE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590B4C26355F6C00BBDE0A /* AppDelegate.swift */; };
 		CF590B4F26355F6C00BBDE0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590B4E26355F6C00BBDE0A /* SceneDelegate.swift */; };
-		CF590B5126355F6C00BBDE0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590B5026355F6C00BBDE0A /* ViewController.swift */; };
-		CF590B5426355F6C00BBDE0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF590B5226355F6C00BBDE0A /* Main.storyboard */; };
 		CF590B5726355F6C00BBDE0A /* RajithTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF590B5526355F6C00BBDE0A /* RajithTask.xcdatamodeld */; };
 		CF590B5926355F6D00BBDE0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF590B5826355F6D00BBDE0A /* Assets.xcassets */; };
-		CF590B5C26355F6D00BBDE0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF590B5A26355F6D00BBDE0A /* LaunchScreen.storyboard */; };
 		CF590B6726355F6E00BBDE0A /* RajithTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590B6626355F6E00BBDE0A /* RajithTaskTests.swift */; };
 		CF590B7226355F6E00BBDE0A /* RajithTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590B7126355F6E00BBDE0A /* RajithTaskUITests.swift */; };
+		CF590BC92635606B00BBDE0A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BC72635606B00BBDE0A /* LoginModel.swift */; };
+		CF590BCA2635606B00BBDE0A /* PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BC82635606B00BBDE0A /* PostDataModel.swift */; };
+		CF590BD12635607E00BBDE0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF590BCE2635607E00BBDE0A /* LaunchScreen.storyboard */; };
+		CF590BD22635607E00BBDE0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF590BCF2635607E00BBDE0A /* Main.storyboard */; };
+		CF590BDD2635609300BBDE0A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BDA2635609200BBDE0A /* LoginViewModel.swift */; };
+		CF590BDE2635609300BBDE0A /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BDB2635609200BBDE0A /* FavouriteViewModel.swift */; };
+		CF590BDF2635609300BBDE0A /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BDC2635609300BBDE0A /* PostViewModel.swift */; };
+		CF590BE62635609B00BBDE0A /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BE32635609B00BBDE0A /* FavouriteVC.swift */; };
+		CF590BE72635609B00BBDE0A /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BE42635609B00BBDE0A /* PostVC.swift */; };
+		CF590BE82635609B00BBDE0A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BE52635609B00BBDE0A /* LoginVC.swift */; };
+		CF590BED263560A300BBDE0A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BEC263560A300BBDE0A /* PostCell.swift */; };
+		CF590BF2263560AB00BBDE0A /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BF1263560AB00BBDE0A /* Internet.swift */; };
+		CF590BF8263560BA00BBDE0A /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BF6263560BA00BBDE0A /* ActivityIndicatorView.swift */; };
+		CF590BF9263560BA00BBDE0A /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF590BF7263560BA00BBDE0A /* ServiceManager.swift */; };
+		CF590BFF2635615100BBDE0A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = CF590BFE2635615100BBDE0A /* Moya */; };
+		CF590C012635615100BBDE0A /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CF590C002635615100BBDE0A /* RxMoya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +52,8 @@
 		CF590B4926355F6C00BBDE0A /* RajithTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RajithTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF590B4C26355F6C00BBDE0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF590B4E26355F6C00BBDE0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF590B5026355F6C00BBDE0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CF590B5326355F6C00BBDE0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF590B5626355F6C00BBDE0A /* RajithTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RajithTask.xcdatamodel; sourceTree = "<group>"; };
 		CF590B5826355F6D00BBDE0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CF590B5B26355F6D00BBDE0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF590B5D26355F6D00BBDE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF590B6226355F6E00BBDE0A /* RajithTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RajithTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF590B6626355F6E00BBDE0A /* RajithTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RajithTaskTests.swift; sourceTree = "<group>"; };
@@ -51,6 +61,20 @@
 		CF590B6D26355F6E00BBDE0A /* RajithTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RajithTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF590B7126355F6E00BBDE0A /* RajithTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RajithTaskUITests.swift; sourceTree = "<group>"; };
 		CF590B7326355F6E00BBDE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF590BC72635606B00BBDE0A /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		CF590BC82635606B00BBDE0A /* PostDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDataModel.swift; sourceTree = "<group>"; };
+		CF590BCE2635607E00BBDE0A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF590BCF2635607E00BBDE0A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CF590BDA2635609200BBDE0A /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CF590BDB2635609200BBDE0A /* FavouriteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
+		CF590BDC2635609300BBDE0A /* PostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		CF590BE32635609B00BBDE0A /* FavouriteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
+		CF590BE42635609B00BBDE0A /* PostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
+		CF590BE52635609B00BBDE0A /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		CF590BEC263560A300BBDE0A /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		CF590BF1263560AB00BBDE0A /* Internet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
+		CF590BF6263560BA00BBDE0A /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		CF590BF7263560BA00BBDE0A /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF590C012635615100BBDE0A /* RxMoya in Frameworks */,
+				CF590BFF2635615100BBDE0A /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,12 +127,13 @@
 		CF590B4B26355F6C00BBDE0A /* RajithTask */ = {
 			isa = PBXGroup;
 			children = (
-				CF590B4C26355F6C00BBDE0A /* AppDelegate.swift */,
-				CF590B4E26355F6C00BBDE0A /* SceneDelegate.swift */,
-				CF590B5026355F6C00BBDE0A /* ViewController.swift */,
-				CF590B5226355F6C00BBDE0A /* Main.storyboard */,
-				CF590B5826355F6D00BBDE0A /* Assets.xcassets */,
-				CF590B5A26355F6D00BBDE0A /* LaunchScreen.storyboard */,
+				CF590B8926355F9100BBDE0A /* Model */,
+				CF590B8826355F8F00BBDE0A /* View */,
+				CF590B8726355F8D00BBDE0A /* ViewModel */,
+				CF590B8626355F8900BBDE0A /* Controller */,
+				CF590B8526355F8700BBDE0A /* Cell */,
+				CF590B8426355F8500BBDE0A /* SupportingFiles */,
+				CF590B8326355F8300BBDE0A /* ServiceManager */,
 				CF590B5D26355F6D00BBDE0A /* Info.plist */,
 				CF590B5526355F6C00BBDE0A /* RajithTask.xcdatamodeld */,
 			);
@@ -131,6 +158,72 @@
 			path = RajithTaskUITests;
 			sourceTree = "<group>";
 		};
+		CF590B8326355F8300BBDE0A /* ServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				CF590BF6263560BA00BBDE0A /* ActivityIndicatorView.swift */,
+				CF590BF7263560BA00BBDE0A /* ServiceManager.swift */,
+			);
+			path = ServiceManager;
+			sourceTree = "<group>";
+		};
+		CF590B8426355F8500BBDE0A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF590BF1263560AB00BBDE0A /* Internet.swift */,
+				CF590B4C26355F6C00BBDE0A /* AppDelegate.swift */,
+				CF590B4E26355F6C00BBDE0A /* SceneDelegate.swift */,
+				CF590B5826355F6D00BBDE0A /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CF590B8526355F8700BBDE0A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF590BEC263560A300BBDE0A /* PostCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CF590B8626355F8900BBDE0A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF590BE32635609B00BBDE0A /* FavouriteVC.swift */,
+				CF590BE52635609B00BBDE0A /* LoginVC.swift */,
+				CF590BE42635609B00BBDE0A /* PostVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CF590B8726355F8D00BBDE0A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CF590BDB2635609200BBDE0A /* FavouriteViewModel.swift */,
+				CF590BDA2635609200BBDE0A /* LoginViewModel.swift */,
+				CF590BDC2635609300BBDE0A /* PostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CF590B8826355F8F00BBDE0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF590BCE2635607E00BBDE0A /* LaunchScreen.storyboard */,
+				CF590BCF2635607E00BBDE0A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF590B8926355F9100BBDE0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF590BC72635606B00BBDE0A /* LoginModel.swift */,
+				CF590BC82635606B00BBDE0A /* PostDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +240,10 @@
 			dependencies = (
 			);
 			name = RajithTask;
+			packageProductDependencies = (
+				CF590BFE2635615100BBDE0A /* Moya */,
+				CF590C002635615100BBDE0A /* RxMoya */,
+			);
 			productName = RajithTask;
 			productReference = CF590B4926355F6C00BBDE0A /* RajithTask.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +315,9 @@
 				Base,
 			);
 			mainGroup = CF590B4026355F6C00BBDE0A;
+			packageReferences = (
+				CF590BFD2635615100BBDE0A /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = CF590B4A26355F6C00BBDE0A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,9 +334,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF590B5C26355F6D00BBDE0A /* LaunchScreen.storyboard in Resources */,
+				CF590BD22635607E00BBDE0A /* Main.storyboard in Resources */,
 				CF590B5926355F6D00BBDE0A /* Assets.xcassets in Resources */,
-				CF590B5426355F6C00BBDE0A /* Main.storyboard in Resources */,
+				CF590BD12635607E00BBDE0A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +361,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF590BE82635609B00BBDE0A /* LoginVC.swift in Sources */,
+				CF590BDF2635609300BBDE0A /* PostViewModel.swift in Sources */,
 				CF590B5726355F6C00BBDE0A /* RajithTask.xcdatamodeld in Sources */,
-				CF590B5126355F6C00BBDE0A /* ViewController.swift in Sources */,
+				CF590BDE2635609300BBDE0A /* FavouriteViewModel.swift in Sources */,
+				CF590BC92635606B00BBDE0A /* LoginModel.swift in Sources */,
+				CF590BE72635609B00BBDE0A /* PostVC.swift in Sources */,
+				CF590BDD2635609300BBDE0A /* LoginViewModel.swift in Sources */,
 				CF590B4D26355F6C00BBDE0A /* AppDelegate.swift in Sources */,
+				CF590BCA2635606B00BBDE0A /* PostDataModel.swift in Sources */,
 				CF590B4F26355F6C00BBDE0A /* SceneDelegate.swift in Sources */,
+				CF590BE62635609B00BBDE0A /* FavouriteVC.swift in Sources */,
+				CF590BF2263560AB00BBDE0A /* Internet.swift in Sources */,
+				CF590BED263560A300BBDE0A /* PostCell.swift in Sources */,
+				CF590BF8263560BA00BBDE0A /* ActivityIndicatorView.swift in Sources */,
+				CF590BF9263560BA00BBDE0A /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,25 +409,6 @@
 			targetProxy = CF590B6E26355F6E00BBDE0A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CF590B5226355F6C00BBDE0A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF590B5326355F6C00BBDE0A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CF590B5A26355F6D00BBDE0A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF590B5B26355F6D00BBDE0A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CF590B7426355F6E00BBDE0A /* Debug */ = {
@@ -591,6 +683,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF590BFD2635615100BBDE0A /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF590BFE2635615100BBDE0A /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF590BFD2635615100BBDE0A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		CF590C002635615100BBDE0A /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF590BFD2635615100BBDE0A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CF590B5526355F6C00BBDE0A /* RajithTask.xcdatamodeld */ = {
